@@ -1391,6 +1391,12 @@ void MovePaperKing() {
 				case STG_4:
 					score = originalScore;
 					checkGotTreasure[3] = false;
+
+					if (attackType == EXCALIBUR) {
+						attackType = SHORTRANGE;
+						paperKing.provideDamage = 1.f;
+					}
+
 					stage::ChangeStage(STG_4);
 					break;
 				case STG_5:
@@ -1431,6 +1437,12 @@ void MovePaperKing() {
 					checkGotTreasure[3] = false;
 					paperKing.hasKey = false;
 					score = originalScore;
+
+					if (attackType == EXCALIBUR) {
+						attackType = SHORTRANGE;
+						paperKing.provideDamage = 1.f;
+					}
+
 					stage::ChangeStage(STG_WORLDMAP);
 					break;
 				case STG_5:
